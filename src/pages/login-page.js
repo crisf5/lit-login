@@ -46,7 +46,8 @@ export class LoginPage extends LitElement {
   static styles = [
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
       }
     `,
   ];

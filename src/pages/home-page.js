@@ -17,9 +17,9 @@ export class HomePage extends LitElement {
       <auth-layout>
         <dile-nav slot="header">
           <h2 slot="title">Lit App</h2>
-          <span slot="menu">[x]</span>
           <span slot="actions">Logout</span>
         </dile-nav>
+        <div slot="main"></div>
         <p slot="footer">Todos los derechos reservados</p>
       </auth-layout>
     `;

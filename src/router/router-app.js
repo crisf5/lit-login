@@ -1,17 +1,24 @@
-import { LitElement, html, css } from 'lit';
+import { Router } from "@vaadin/router";
+import { LitElement, html, css } from "lit";
 
 export class RouterApp extends LitElement {
-    static styles = [
-        css`
-            :host {
-                display: block;
-            }
-        `
-    ];
+  firstUpdated() {
+    const router = new Router(this.shadowRoot.querySelector("#outlet"));
+    router.setRoutes([
+      { path: "/", component: "login-page" },
+      { path: "/login", component: "login-page" },
+      { path: "/home", component: "home-page" },
+    ]);
+  }
 
-    render() {
-        return html``;
+  static styles = css`
+    :host {
+      width: 100%;
     }
-}
-customElements.define('router-app', RouterApp);
+  `;
 
+  render() {
+    return html` <div id="outlet"></div> `;
+  }
+}
+customElements.define("router-app", RouterApp);
