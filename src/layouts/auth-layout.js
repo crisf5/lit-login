@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class HomePage extends LitElement {
+export class AuthLayout extends LitElement {
     static styles = [
         css`
             :host {
@@ -13,4 +13,4 @@ export class HomePage extends LitElement {
         return html``;
     }
 }
-customElements.define('home-page', HomePage);
+customElements.define('auth-layout', AuthLayout);
