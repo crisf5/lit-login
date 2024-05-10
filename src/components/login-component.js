@@ -16,7 +16,30 @@ export class LoginComponent extends LitElement {
   static styles = [
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        border: 1px black solid;
+        border-radius: 16px;
+        padding: 18px;
+      }
+
+      button {
+        margin: 5px 20px;
+        padding: 8px;
+        background-color: #ebe5ff;
+        border: none;
+        border-radius: 10px;
+      }
+
+      button:hover {
+        background-color: #bea6ff;
       }
     `,
   ];
@@ -28,12 +51,12 @@ export class LoginComponent extends LitElement {
 
   handleSubmit(event) {
     event.preventDefault();
-    if(this.username == 'cristian' && this.password == '1234'){
+    if (this.username == "cristian" && this.password == "1234") {
       this.dispatchCustomEvent("login-success", {
         username: this.username,
         password: this.password,
       });
-    }else{
+    } else {
       this.dispatchCustomEvent("login-error", {
         username: this.username,
         password: this.password,

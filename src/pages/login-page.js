@@ -59,7 +59,7 @@ export class LoginPage extends LitElement {
             .type=${this.alertType}
             .message=${this.alertMessage}
           ></alert-component>`
-        : nothing};
+        : nothing}
     </public-layout>`;
   }
 }
