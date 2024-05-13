@@ -1,7 +1,5 @@
 import { LitElement, html, css } from "lit";
 
-
-
 export class LoginComponent extends LitElement {
   constructor() {
     super();
@@ -58,8 +56,7 @@ export class LoginComponent extends LitElement {
         username: this.username,
         password: this.password,
       });
-      this.loginCorrect();
-
+      localStorage.setItem(this.username, this.password);
     } else {
       this.dispatchCustomEvent("login-error", {
         username: this.username,
@@ -69,8 +66,6 @@ export class LoginComponent extends LitElement {
 
     this.initProperties();
   }
-
-
 
   dispatchCustomEvent(eventName, detail) {
     const loginEvent = new CustomEvent(eventName, {
