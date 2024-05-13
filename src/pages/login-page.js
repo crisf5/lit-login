@@ -1,5 +1,7 @@
 import { LitElement, html, css, nothing } from "lit";
 
+import { Router } from "@vaadin/router";
+
 import "../components/alert-component.js";
 import "../components/login-component.js";
 import "../layouts/public-layout.js";
@@ -21,6 +23,7 @@ export class LoginPage extends LitElement {
   handleLoginSuccess(event) {
     this.alertType = "success";
     this.alertMessage = "Login correcto!";
+    this.loginCorrect();
   }
 
   handleLoginError(event) {
@@ -43,6 +46,12 @@ export class LoginPage extends LitElement {
     super.disconnectedCallback();
   }
 
+  loginCorrect() {
+    setTimeout(() => {
+      Router.go("/home");
+    }, 1500);
+  }
+
   static styles = [
     css`
       :host {
@@ -53,8 +62,8 @@ export class LoginPage extends LitElement {
         margin: auto;
       }
 
-      alert-component{
-        margin-top:30px
+      alert-component {
+        margin-top: 30px;
       }
     `,
   ];

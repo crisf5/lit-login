@@ -20,8 +20,16 @@ export class HomePage extends LitElement {
         margin-right: 30px;
       }
 
-      .main{
-        width:100%
+      .logout{
+        padding:10px;
+        border-radius:10px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .main {
+        width: 100%;
       }
 
       .footer {
@@ -38,10 +46,11 @@ export class HomePage extends LitElement {
       <auth-layout>
         <dile-nav slot="header">
           <h2 slot="title">Aplicacion LIT</h2>
-          <span slot="actions">Logout</span>
+          <span slot="actions">
+            <button class="logout">Logout</button>
+          </span>
         </dile-nav>
-        <div class="main" slot="main">
-        </div>
+        <div class="main" slot="main"></div>
         <p class="footer" slot="footer">
           Todos los derechos reservados &copy; 2024 <br />Cristian F.
         </p>
