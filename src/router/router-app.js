@@ -1,6 +1,9 @@
 import { Router } from "@vaadin/router";
 import { LitElement, html, css } from "lit";
 
+import "../pages/home-page.js";
+import "../pages/login-page.js";
+
 export class RouterApp extends LitElement {
   firstUpdated() {
     const router = new Router(this.shadowRoot.querySelector("#outlet"));
