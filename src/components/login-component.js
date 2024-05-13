@@ -56,7 +56,7 @@ export class LoginComponent extends LitElement {
         username: this.username,
         password: this.password,
       });
-      localStorage.setItem(this.username, this.password);
+      localStorage.setItem("authToken", this.tokenGenerator());
     } else {
       this.dispatchCustomEvent("login-error", {
         username: this.username,
@@ -80,6 +80,10 @@ export class LoginComponent extends LitElement {
   handleInputChange(event) {
     const { name, value } = event.target;
     this[name] = value;
+  }
+
+  tokenGenerator(){
+    return "ABC" + parseInt(Math.random() * 9999999);
   }
 
   render() {

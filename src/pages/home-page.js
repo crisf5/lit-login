@@ -1,4 +1,5 @@
 import { LitElement, html, css } from "lit";
+import { Router } from "@vaadin/router";
 
 import "@dile/dile-nav/dile-nav.js";
 import "../layouts/auth-layout.js";
@@ -20,9 +21,9 @@ export class HomePage extends LitElement {
         margin-right: 30px;
       }
 
-      .logout{
-        padding:10px;
-        border-radius:10px;
+      .logout {
+        padding: 10px;
+        border-radius: 10px;
         border: none;
         background-color: white;
         cursor: pointer;
@@ -41,13 +42,18 @@ export class HomePage extends LitElement {
     `,
   ];
 
+  logout() {
+    localStorage.removeItem("authToken");
+    Router.go("/login");
+  }
+
   render() {
     return html`
       <auth-layout>
         <dile-nav slot="header">
           <h2 slot="title">Aplicacion LIT</h2>
           <span slot="actions">
-            <button class="logout">Logout</button>
+            <button class="logout" @click=${this.logout}>Logout</button>
           </span>
         </dile-nav>
         <div class="main" slot="main"></div>

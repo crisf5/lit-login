@@ -52,6 +52,7 @@ export class LoginPage extends LitElement {
     }, 1500);
   }
 
+
   static styles = [
     css`
       :host {
