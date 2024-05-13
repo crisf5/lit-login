@@ -48,6 +48,13 @@ export class LoginPage extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        margin: auto;
+      }
+
+      alert-component{
+        margin-top:30px
       }
     `,
   ];
