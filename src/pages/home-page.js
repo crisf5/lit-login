@@ -7,7 +7,28 @@ export class HomePage extends LitElement {
   static styles = [
     css`
       :host {
-        display: block;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+      }
+
+      dile-nav {
+        background-color: #1b358d;
+      }
+
+      dile-nav span {
+        margin-right: 30px;
+      }
+
+      .main{
+        width:100%
+      }
+
+      .footer {
+        text-align: center;
+        background-color: #e4e8e9;
+        margin: 0;
+        padding: 7px;
       }
     `,
   ];
@@ -16,11 +37,14 @@ export class HomePage extends LitElement {
     return html`
       <auth-layout>
         <dile-nav slot="header">
-          <h2 slot="title">Lit App</h2>
+          <h2 slot="title">Aplicacion LIT</h2>
           <span slot="actions">Logout</span>
         </dile-nav>
-        <div slot="main"></div>
-        <p slot="footer">Todos los derechos reservados</p>
+        <div class="main" slot="main">
+        </div>
+        <p class="footer" slot="footer">
+          Todos los derechos reservados &copy; 2024 <br />Cristian F.
+        </p>
       </auth-layout>
     `;
   }
