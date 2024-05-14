@@ -31,6 +31,12 @@ export class HomePage extends LitElement {
 
       .main {
         width: 100%;
+        height: 300px;
+      }
+
+      .main img {
+        width: 100%;
+        height: 300px;
       }
 
       .footer {
@@ -47,19 +53,40 @@ export class HomePage extends LitElement {
     Router.go("/login");
   }
 
+  get _headerTemplate() {
+    return html`
+      <dile-nav slot="header">
+        <h2 slot="title">Aplicacion LIT</h2>
+        <span slot="actions">
+          <button class="logout" @click=${this.logout}>Logout</button>
+        </span>
+      </dile-nav>
+    `;
+  }
+
+  get _mainTemplate() {
+    return html`
+      <div class="main" slot="main">
+        <h1>Logo aca</h1>
+        <img src="../assets/lit.svg" alt="logo lit" />
+      </div>
+    `;
+  }
+
+  get _footerTemplate() {
+    return html`
+      <p class="footer" slot="footer">
+        Todos los derechos reservados &copy; 2024 <br />
+        Cristian F.
+      </p>
+      ;
+    `;
+  }
+
   render() {
     return html`
       <auth-layout>
-        <dile-nav slot="header">
-          <h2 slot="title">Aplicacion LIT</h2>
-          <span slot="actions">
-            <button class="logout" @click=${this.logout}>Logout</button>
-          </span>
-        </dile-nav>
-        <div class="main" slot="main"></div>
-        <p class="footer" slot="footer">
-          Todos los derechos reservados &copy; 2024 <br />Cristian F.
-        </p>
+        ${this._headerTemplate} ${this._mainTemplate} ${this._footerTemplate}
       </auth-layout>
     `;
   }

@@ -49,9 +49,8 @@ export class LoginPage extends LitElement {
   loginCorrect() {
     setTimeout(() => {
       Router.go("/home");
-    }, 1500);
+    }, 1000);
   }
-
 
   static styles = [
     css`
@@ -69,15 +68,21 @@ export class LoginPage extends LitElement {
     `,
   ];
 
-  render() {
-    return html` <public-layout>
-      <login-component></login-component>
+  get _alerTemplate() {
+    return html`
       ${this.alertType
         ? html`<alert-component
             .type=${this.alertType}
             .message=${this.alertMessage}
           ></alert-component>`
         : nothing}
+    `;
+  }
+
+  render() {
+    return html` <public-layout>
+      <login-component></login-component>
+      ${this._alerTemplate}
     </public-layout>`;
   }
 }

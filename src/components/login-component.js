@@ -51,7 +51,7 @@ export class LoginComponent extends LitElement {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.username == "cristian" && this.password == "1234") {
+    if (this.username == "cristian" && this.password == "lit") {
       this.dispatchCustomEvent("login-success", {
         username: this.username,
         password: this.password,
