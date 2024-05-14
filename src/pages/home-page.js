@@ -30,13 +30,10 @@ export class HomePage extends LitElement {
       }
 
       .main {
+        display: flex;
+        justify-content: center;
         width: 100%;
-        height: 300px;
-      }
-
-      .main img {
-        width: 100%;
-        height: 300px;
+        font-size: 50px;
       }
 
       .footer {
@@ -67,8 +64,7 @@ export class HomePage extends LitElement {
   get _mainTemplate() {
     return html`
       <div class="main" slot="main">
-        <h1>Logo aca</h1>
-        <img src="../assets/lit.svg" alt="logo lit" />
+        <h1>✈ ☁ ☀</h1>
       </div>
     `;
   }
