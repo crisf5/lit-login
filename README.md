@@ -7,6 +7,6 @@ Login basico utilizando la libreria Lit. Tambien se usa vaadin router y localsto
 - Usuario: cristian
 - Password: lit
 
-En caso de poner bien las credenciales saltara una alerta de "login correcto" y espera 1 segundo para redireccionar a la home. Si las crendeciales son incorrectas saldra una alerta indicandolo.
+En caso de poner bien las credenciales saltara una alerta de "login correcto" y la app espera 1 segundo para redireccionar a la home. Si las crendeciales son incorrectas saldra una alerta indicandolo.
 
-Si no se logueo previamente se redireccionara a la home, esta comprobacion se hace mediante un mixin que verifica un "token" en localstorage.
+Si se intenta ingresar a la home sin haberse logueado previamente se redireccionara al login, esta comprobacion se hace mediante una verificacion de "token" en localstorage.
